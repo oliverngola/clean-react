@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
     "target": "es6",
     "lib": [
       "dom",
@@ -17,9 +16,13 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "rootDirs": ["src", "tests"],
+    "baseUrl": "src",
+    "paths": {
+      "@/tests/*": ["../tests/*"],
+      "@/*": ["*"]
+    }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src", "tests"]
 }
