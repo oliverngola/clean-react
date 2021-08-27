@@ -27,7 +27,7 @@ module.exports = {
       }, {
         loader: 'css-loader',
         options: {
-          module: true
+          modules: true
         }
       }, {
         loader: 'sass-loader'
@@ -37,11 +37,12 @@ module.exports = {
   devServer: {
     contentBase: './public',
     writeToDisk: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    port: 8080
   },
   externals: {
     react: 'React',
-    'react-dom': 'ReactDom'
+    'react-dom': 'ReactDOM'
   },
   plugins: [
     new CleanWebpackPlugin()
