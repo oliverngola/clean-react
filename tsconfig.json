@@ -7,17 +7,13 @@
       "esnext"
     ],
     "allowJs": true,
-    "skipLibCheck": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "noEmit": true,
     "jsx": "react",
-    "rootDirs": ["src", "tests"],
     "baseUrl": "src",
+    "rootDirs": ["src", "tests"],
     "paths": {
       "@/tests/*": ["../tests/*"],
       "@/*": ["*"]
