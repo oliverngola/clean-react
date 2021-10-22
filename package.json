@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Nodejs Rest API using TDD, Clean Architecture and Typescript",
   "author": "Oliveira Ngola",
-  "license": "ISC",
   "scripts": {
     "start": "webpack-dev-server --open",
     "lint": "eslint .",
