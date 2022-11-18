@@ -186,4 +186,12 @@ describe('SignUp Component', () => {
     Helper.testChildCount(sut, 'error-wrap', 1)
     Helper.testElementText(sut, 'main-error', error.message)
   })
+
+  test('Should go to login page', async () => {
+    const { sut } = makeSut()
+    const signupButton = sut.getByTestId('login')
+    fireEvent.click(signupButton)
+    expect(history.length).toBe(2)
+    expect(history.location.pathname).toBe('/login')
+  })
 })
