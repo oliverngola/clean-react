@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "ES6",
     "noEmit": true,
     "types": ["cypress"],
     "esModuleInterop": true
