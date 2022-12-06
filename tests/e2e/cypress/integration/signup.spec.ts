@@ -1,4 +1,5 @@
 import * as FormHelper from '../support/form-helper'
+import faker from 'faker'
 
 describe('SignUp', () => {
   beforeEach(() => {
@@ -14,6 +15,20 @@ describe('SignUp', () => {
     cy.getByTestId('password').should('have.attr', 'readOnly')
     FormHelper.testInputStatus('password', error)
     cy.getByTestId('passwordConfirmation').should('have.attr', 'readOnly')
+    FormHelper.testInputStatus('passwordConfirmation', error)
+    cy.getByTestId('submit').should('have.attr', 'disabled')
+    cy.getByTestId('error-wrap').should('not.have.descendants')
+  })
+
+  it('Should present error state if form is invalid', () => {
+    const error = 'Campo inválido'
+    cy.getByTestId('name').focus().type(faker.random.alphaNumeric(4))
+    FormHelper.testInputStatus('name', error)
+    cy.getByTestId('email').focus().type(faker.random.word())
+    FormHelper.testInputStatus('email', error)
+    cy.getByTestId('password').focus().type(faker.random.alphaNumeric(4))
+    FormHelper.testInputStatus('password', error)
+    cy.getByTestId('passwordConfirmation').focus().type(faker.random.alphaNumeric(4))
     FormHelper.testInputStatus('passwordConfirmation', error)
     cy.getByTestId('submit').should('have.attr', 'disabled')
     cy.getByTestId('error-wrap').should('not.have.descendants')
