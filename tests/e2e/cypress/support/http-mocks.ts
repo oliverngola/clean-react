@@ -1,4 +1,4 @@
-import { Method } from 'cypress/types/net-stubbing'
+import { Method } from '../../../../node_modules/cypress/types/net-stubbing'
 import faker from 'faker'
 
 export const mockInvalidCredencialsError = (url: RegExp): void => {

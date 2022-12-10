@@ -2,11 +2,12 @@
   "compilerOptions": {
     "target": "ES6",
     "noEmit": true,
-    "types": ["cypress"],
+    "types": ["cypress", "node"],
     "esModuleInterop": true
   },
   "include": [
-    "../../../../node_modules/cypress",
+    "node_modules/cypress",
+    "node_modules",
     "./**/*.ts"
   ]
 }
