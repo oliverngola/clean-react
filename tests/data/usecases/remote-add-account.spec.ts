@@ -9,11 +9,11 @@ import faker from 'faker'
 
 type SutTypes = {
   sut: RemoteAddAccount
-  httpPostClientSpy: HttpPostClientSpy<AddAccount.Params, AddAccount.Result>
+  httpPostClientSpy: HttpPostClientSpy<AddAccount.Result>
 }
 
 const makeSut = (url: string = faker.internet.url()): SutTypes => {
-  const httpPostClientSpy = new HttpPostClientSpy<AddAccount.Params, AddAccount.Result>()
+  const httpPostClientSpy = new HttpPostClientSpy<AddAccount.Result>()
   const sut = new RemoteAddAccount(url, httpPostClientSpy)
   return {
     sut,
