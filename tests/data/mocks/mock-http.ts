@@ -1,4 +1,4 @@
-import { HttpPostClient, HttpResponse, HttpStatusCode } from '@/data/protocols'
+import { HttpGetClient, HttpPostClient, HttpResponse, HttpStatusCode } from '@/data/protocols'
 
 import faker from 'faker'
 
@@ -17,6 +17,18 @@ export class HttpPostClientSpy<R> implements HttpPostClient<R> {
   async post (params: HttpPostClient.Params): Promise<HttpResponse<R>> {
     this.url = params.url
     this.body = params.body
+    return await Promise.resolve(this.response)
+  }
+}
+
+export class HttpGetClientSpy<R> implements HttpGetClient {
+  url?: string
+  response: HttpResponse<R> = {
+    statusCode: HttpStatusCode.ok
+  }
+
+  async get (params: HttpPostClient.Params): Promise<HttpResponse<R>> {
+    this.url = params.url
     return await Promise.resolve(this.response)
   }
 }
