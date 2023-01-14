@@ -21,7 +21,7 @@ export class HttpPostClientSpy<R> implements HttpPostClient<R> {
   }
 }
 
-export class HttpGetClientSpy<R> implements HttpGetClient {
+export class HttpGetClientSpy<R> implements HttpGetClient<R> {
   url?: string
   response: HttpResponse<R> = {
     statusCode: HttpStatusCode.ok
