@@ -17,6 +17,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.2",
     "@types/axios": "^0.14.0",
     "@types/faker": "^5.5.9",
