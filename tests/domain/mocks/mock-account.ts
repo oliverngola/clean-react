@@ -12,7 +12,7 @@ export const mockAddAccount = (): AddAccount.Params => {
   return {
     name: faker.random.word(),
     email: faker.internet.email(),
-    password: password,
+    password,
     passwordConfirmation: password
   }
 }
