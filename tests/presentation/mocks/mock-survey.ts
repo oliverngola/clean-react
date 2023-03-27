@@ -5,7 +5,7 @@ export class LoadSurveyListSpy implements LoadSurveyList {
   callsCount = 0
   survey = mockSurvelListModel()
 
-  async loadAll (): Promise<LoadSurveyList.Result> {
+  async loadAll (): Promise<LoadSurveyList.Model[]> {
     this.callsCount++
     return this.survey
   }

@@ -5,10 +5,10 @@ import { UnexpectedError } from '@/domain/errors'
 export class RemoteLoadSurveyList implements LoadSurveyList {
   constructor (
     private readonly url: string,
-    private readonly httpGetClient: HttpGetClient<LoadSurveyList.Result>
+    private readonly httpGetClient: HttpGetClient<RemoteLoadSurveyList.Model[]>
   ) {}
 
-  async loadAll (): Promise<LoadSurveyList.Result> {
+  async loadAll (): Promise<LoadSurveyList.Model[]> {
     const httpResponse = await this.httpGetClient.get({
       url: this.url
     })
@@ -18,4 +18,8 @@ export class RemoteLoadSurveyList implements LoadSurveyList {
       default: throw new UnexpectedError()
     }
   }
+}
+
+export namespace RemoteLoadSurveyList {
+  export type Model = LoadSurveyList.Model
 }
