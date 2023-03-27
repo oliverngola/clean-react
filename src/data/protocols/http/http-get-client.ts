@@ -7,5 +7,6 @@ export interface HttpGetClient<R = any> {
 export namespace HttpGetClient {
   export type Params = {
     url: string
+    headers?: any
   }
 }
