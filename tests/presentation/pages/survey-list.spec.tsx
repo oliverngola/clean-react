@@ -1,3 +1,4 @@
+import { mockAccountModel } from '@/tests/domain/mocks'
 import { LoadSurveyListSpy } from '@/tests/presentation/mocks'
 import { UnexpectedError } from '@/domain/errors'
 import { SurveyList } from '@/presentation/pages'
@@ -13,7 +14,7 @@ type SutTypes = {
 
 const makeSut = (loadSurveyListSpy = new LoadSurveyListSpy()): SutTypes => {
   render(
-    <ApiContext.Provider value={{ setCurrentAccount: jest.fn() }}>
+    <ApiContext.Provider value={{ setCurrentAccount: jest.fn(), getCurrentAccount: () => mockAccountModel() }}>
       <Router history={createMemoryHistory()}>
         <SurveyList loadSurveyList={loadSurveyListSpy} />)
       </Router>
