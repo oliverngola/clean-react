@@ -4,3 +4,4 @@ coverage
 public/js
 .DS_Store
 cypress
+!tests/e2e/cypress/

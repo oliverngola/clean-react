@@ -1,7 +1,7 @@
 import { Method } from '../../../../node_modules/cypress/types/net-stubbing'
 import faker from 'faker'
 
-export const mockInvalidCredencialsError = (url: RegExp): void => {
+export const mockUnauthorizedError = (url: RegExp): void => {
   cy.intercept('POST', url, {
     statusCode: 401,
     body: {
@@ -10,8 +10,8 @@ export const mockInvalidCredencialsError = (url: RegExp): void => {
   }).as('request')
 }
 
-export const mockEmailInUseError = (url: RegExp): void => {
-  cy.intercept('POST', url, {
+export const mockForbbidenError = (url: RegExp, method: Method): void => {
+  cy.intercept(method, url, {
     statusCode: 403,
     body: {
       error: faker.random.words()
@@ -19,7 +19,7 @@ export const mockEmailInUseError = (url: RegExp): void => {
   }).as('request')
 }
 
-export const mockUnexpectedError = (url: RegExp, method: Method): void => {
+export const mockServerError = (url: RegExp, method: Method): void => {
   cy.intercept(method, url, {
     statusCode: faker.helpers.randomize([400,404,500]),
     body: {
