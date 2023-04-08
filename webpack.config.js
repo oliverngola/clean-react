@@ -52,7 +52,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new DefinePlugin({
-      'process.env.API_URL': JSON.stringify('http://192.168.0.106:5050/api')
+      'process.env.API_URL': JSON.stringify('http://192.168.0.113:5050/api')
     })
   ]
 }
