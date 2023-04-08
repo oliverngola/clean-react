@@ -1,8 +1,8 @@
 import { GetStorageSpy, HttpGetClientSpy, mockGetRequest } from '@/tests/data/mocks'
+import { mockAccountModel } from '@/tests/domain/mocks'
 import { AuthorizeHttpGetClientDecorator } from '@/main/decorators'
 import { HttpGetClient } from '@/data/protocols'
 import faker from 'faker'
-import { mockAccountModel } from '@/tests/domain/mocks'
 
 type SutTypes = {
   sut: AuthorizeHttpGetClientDecorator

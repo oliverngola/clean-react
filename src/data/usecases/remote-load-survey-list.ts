@@ -1,5 +1,5 @@
-import { LoadSurveyList } from '@/domain/usecases'
 import { HttpGetClient, HttpStatusCode } from '@/data/protocols'
+import { LoadSurveyList } from '@/domain/usecases'
 import { UnexpectedError } from '@/domain/errors'
 
 export class RemoteLoadSurveyList implements LoadSurveyList {

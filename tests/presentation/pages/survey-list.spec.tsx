@@ -1,11 +1,11 @@
-import { SurveyList } from '@/presentation/pages'
-import { UnexpectedError } from '@/domain/errors'
-import { ApiContext } from '@/presentation/contexts'
 import { LoadSurveyListSpy } from '@/tests/presentation/mocks'
-import { fireEvent, render,screen, waitFor } from '@testing-library/react'
+import { UnexpectedError } from '@/domain/errors'
+import { SurveyList } from '@/presentation/pages'
+import { ApiContext } from '@/presentation/contexts'
 import React from 'react'
-import { createMemoryHistory } from 'history'
 import { Router } from 'react-router-dom'
+import { fireEvent, render,screen, waitFor } from '@testing-library/react'
+import { createMemoryHistory } from 'history'
 
 type SutTypes = {
   loadSurveyListSpy: LoadSurveyListSpy

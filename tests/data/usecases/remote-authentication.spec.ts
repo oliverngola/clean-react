@@ -3,7 +3,6 @@ import { mockAccountModel, mockAuthentication } from '@/tests/domain/mocks'
 import { RemoteAuthentication } from '@/data/usecases'
 import { HttpStatusCode } from '@/data/protocols'
 import { InvalidCredencialsError, UnexpectedError } from '@/domain/errors'
-
 import faker from 'faker'
 
 type SutTypes = {

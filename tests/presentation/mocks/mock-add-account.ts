@@ -1,5 +1,5 @@
-import { AddAccount } from '@/domain/usecases'
 import { mockAccountModel } from '@/tests/domain/mocks'
+import { AddAccount } from '@/domain/usecases'
 
 export class AddAccountSpy implements AddAccount {
   account = mockAccountModel()

@@ -3,7 +3,6 @@ import { mockAccountModel, mockAddAccount } from '@/tests/domain/mocks'
 import { RemoteAddAccount } from '@/data/usecases'
 import { HttpStatusCode } from '@/data/protocols'
 import { EmailInUseError, UnexpectedError } from '@/domain/errors'
-
 import faker from 'faker'
 
 type SutTypes = {
