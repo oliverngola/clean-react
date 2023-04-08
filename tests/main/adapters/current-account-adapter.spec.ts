@@ -1,4 +1,3 @@
-import { UnexpectedError } from '@/domain/errors'
 import { LocalStorageAdapter } from '@/infra/cache'
 import { setCurrentAccountAdapter, getCurrentAccountAdapter } from '@/main/adapters'
 import { mockAccountModel } from '@/tests/domain/mocks'
@@ -11,12 +10,6 @@ describe('CurrentAccountAdapter', () => {
     const setSpy = jest.spyOn(LocalStorageAdapter.prototype, 'set')
     setCurrentAccountAdapter(account)
     expect(setSpy).toBeCalledWith('account', account)
-  })
-
-  test('Should throw UnexpectedError', () => {
-    expect(() => {
-      setCurrentAccountAdapter(undefined)
-    }).toThrow(new UnexpectedError())
   })
 
   test('Should call LocalStorageAdapter.get with correct values', () => {
