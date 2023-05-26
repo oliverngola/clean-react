@@ -1,7 +1,7 @@
 node_modules
 coverage
 .vscode
-public/js
 .DS_Store
 cypress
 !tests/e2e/cypress/
+dist
