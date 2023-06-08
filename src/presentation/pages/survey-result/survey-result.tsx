@@ -8,7 +8,7 @@ const SurveyResult: React.FC = () => {
     <div className={Styles.surveyResultWrap}>
       <Header />
         <div className={Styles.contentWrap}>
-          { false &&
+          { true &&
             <>
               <hgroup>
                 <Calendar className={Styles.calendarWrap} date={new Date()} />
@@ -16,8 +16,8 @@ const SurveyResult: React.FC = () => {
               </hgroup>
               <FlipMove className={Styles.answersList}>
                 <li>
-                  <img src="http://localhost:5050/static/img/logo-php.png" />
-                  <span className={Styles.answer}>PHP</span>
+                  <img src="http://localhost:5050/static/img/logo-vue.png" />
+                  <span className={Styles.answer}>Vue</span>
                   <span className={Styles.percent}>56%</span>
                 </li>
                 <li className={Styles.active}>
@@ -28,7 +28,7 @@ const SurveyResult: React.FC = () => {
                 <li>
                   <img src="http://localhost:5050/static/img/logo-angular.png" />
                   <span className={Styles.answer}>Angular</span>
-                  <span className={Styles.percent}>25%</span>
+                  <span className={Styles.percent}>34%</span>
                 </li>
               </FlipMove>
               <button>Voltar</button>
