@@ -8,29 +8,33 @@ const SurveyResult: React.FC = () => {
     <div className={Styles.surveyResultWrap}>
       <Header />
         <div className={Styles.contentWrap}>
-          <hgroup>
-            <Calendar className={Styles.calendarWrap} date={new Date()} />
-            <h2>Qual seu framework favorito?</h2>
-          </hgroup>
-          <FlipMove className={Styles.answersList}>
-            <li>
-              <img src="http://localhost:5050/static/img/logo-php.png" />
-              <span className={Styles.answer}>PHP</span>
-              <span className={Styles.percent}>56%</span>
-            </li>
-            <li className={Styles.active}>
-              <img src="http://localhost:5050/static/img/logo-react.png" />
-              <span className={Styles.answer}>React</span>
-              <span className={Styles.percent}>10%</span>
-            </li>
-            <li>
-              <img src="http://localhost:5050/static/img/logo-angular.png" />
-              <span className={Styles.answer}>Angular</span>
-              <span className={Styles.percent}>25%</span>
-            </li>
-          </FlipMove>
-          <button>Voltar</button>
-          {false && <Loading />}
+          { false &&
+            <>
+              <hgroup>
+                <Calendar className={Styles.calendarWrap} date={new Date()} />
+                <h2>Qual seu framework favorito?</h2>
+              </hgroup>
+              <FlipMove className={Styles.answersList}>
+                <li>
+                  <img src="http://localhost:5050/static/img/logo-php.png" />
+                  <span className={Styles.answer}>PHP</span>
+                  <span className={Styles.percent}>56%</span>
+                </li>
+                <li className={Styles.active}>
+                  <img src="http://localhost:5050/static/img/logo-react.png" />
+                  <span className={Styles.answer}>React</span>
+                  <span className={Styles.percent}>10%</span>
+                </li>
+                <li>
+                  <img src="http://localhost:5050/static/img/logo-angular.png" />
+                  <span className={Styles.answer}>Angular</span>
+                  <span className={Styles.percent}>25%</span>
+                </li>
+              </FlipMove>
+              <button>Voltar</button>
+              {false && <Loading />}
+            </>
+          }
         </div>
       <Footer />
     </div>
