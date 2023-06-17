@@ -3,6 +3,7 @@ import * as Helper from '../support/helpers'
 
 const path = /\/surveys\/any_id\//
 const mockUnexpectedError = (): void => { Http.mockServerError(path, 'GET') }
+const mockAcessDeniedError = (): void => { Http.mockForbbidenError(path, 'GET') }
 const mockSuccess = (): void => {
   cy.fixture('survey-result').then(surveyList => {
     Http.mockOk(path, 'GET', surveyList)
@@ -29,5 +30,11 @@ describe('SurveyResult', () => {
     mockSuccess()
     cy.getByTestId('reload').click()
     cy.getByTestId('question').should('exist')
+  })
+
+  it('Should logout on AccesDeniedError', () => {
+    mockAcessDeniedError()
+    cy.visit('/surveys/any_id')
+    Helper.testUrl('/login')
   })
 })
