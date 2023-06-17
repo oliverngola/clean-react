@@ -1,5 +1,4 @@
-import { mockAccountModel } from '@/tests/domain/mocks'
-import { LoadSurveyListSpy } from '@/tests/presentation/mocks'
+import { mockAccountModel,LoadSurveyListSpy } from '@/tests/domain/mocks'
 import { AccessDeniedError, UnexpectedError } from '@/domain/errors'
 import { AccountModel } from '@/domain/models'
 import { SurveyList } from '@/presentation/pages'

@@ -1,4 +1,5 @@
-import { AddAccountSpy, Helper, ValidationStub } from '@/tests/presentation/mocks'
+import { Helper, ValidationStub } from '@/tests/presentation/mocks'
+import { AddAccountSpy } from '@/tests/domain/mocks'
 import { SignUp } from '@/presentation/pages'
 import { ApiContext } from '@/presentation/contexts'
 import { EmailInUseError } from '@/domain/errors'

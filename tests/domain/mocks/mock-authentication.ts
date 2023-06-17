@@ -1,5 +1,11 @@
 import { mockAccountModel } from '@/tests/domain/mocks'
 import { Authentication } from '@/domain/usecases'
+import faker from 'faker'
+
+export const mockAuthentication = (): Authentication.Params => ({
+  email: faker.internet.email(),
+  password: faker.internet.password()
+})
 
 export class AuthenticationSpy implements Authentication {
   account = mockAccountModel()

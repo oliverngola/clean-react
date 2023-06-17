@@ -1,5 +1,4 @@
-import { LoadSurveyResultSpy } from '@/tests/presentation/mocks'
-import { mockAccountModel, mockSurveyResultModel } from '@/tests/domain/mocks'
+import { mockAccountModel, mockSurveyResultModel, LoadSurveyResultSpy } from '@/tests/domain/mocks'
 import { SurveyResult } from '@/presentation/pages'
 import { ApiContext } from '@/presentation/contexts'
 import { AccessDeniedError, UnexpectedError } from '@/domain/errors'

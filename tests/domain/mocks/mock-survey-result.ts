@@ -1,18 +1,5 @@
-import { LoadSurveyList, LoadSurveyResult } from '@/domain/usecases'
+import { LoadSurveyResult } from '@/domain/usecases'
 import faker from 'faker'
-
-export const mockSurveyModel = (): LoadSurveyList.Model => ({
-  id: faker.datatype.uuid(),
-  question: faker.random.words(10),
-  date: new Date(),
-  didAnswer: faker.datatype.boolean()
-})
-
-export const mockSurvelListModel = (): LoadSurveyList.Model[] => ([
-  mockSurveyModel(),
-  mockSurveyModel(),
-  mockSurveyModel()
-])
 
 export const mockSurveyResultModel = (): LoadSurveyResult.Model => ({
   question: faker.random.words(10),
@@ -30,3 +17,13 @@ export const mockSurveyResultModel = (): LoadSurveyResult.Model => ({
     isCurrentAccountAnswer: false
   }]
 })
+
+export class LoadSurveyResultSpy implements LoadSurveyResult {
+  callsCount = 0
+  surveyResult = mockSurveyResultModel()
+
+  async load (): Promise<LoadSurveyResult.Model> {
+    this.callsCount++
+    return this.surveyResult
+  }
+}

@@ -1,4 +1,5 @@
-import { ValidationStub, AuthenticationSpy, Helper } from '@/tests/presentation/mocks'
+import { ValidationStub, Helper } from '@/tests/presentation/mocks'
+import { AuthenticationSpy } from '@/tests/domain/mocks'
 import { Login } from '@/presentation/pages'
 import { ApiContext } from '@/presentation/contexts'
 import { AccountModel } from '@/domain/models'
