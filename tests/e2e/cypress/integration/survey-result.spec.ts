@@ -5,8 +5,8 @@ const path = /\/surveys\/any_id\//
 const mockUnexpectedError = (): void => { Http.mockServerError(path, 'GET') }
 const mockAcessDeniedError = (): void => { Http.mockForbbidenError(path, 'GET') }
 const mockSuccess = (): void => {
-  cy.fixture('survey-result').then(surveyList => {
-    Http.mockOk(path, 'GET', surveyList)
+  cy.fixture('survey-result').then(surveyResult => {
+    Http.mockOk(path, 'GET', surveyResult)
   })
 }
 
@@ -55,5 +55,13 @@ describe('SurveyResult', () => {
       assert.notExists(li.find('[data-testid="image"]'))
       assert.equal(li.find('[data-testid="percent"]').text(), '30%')
     })
+  })
+
+  it('Should go to SurveyList on back button click', () => {
+    cy.visit('')
+    mockSuccess()
+    cy.visit('/surveys/any_id')
+    cy.getByTestId('back-button').click()
+    Helper.testUrl('/')
   })
 })
