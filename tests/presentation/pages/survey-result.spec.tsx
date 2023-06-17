@@ -139,6 +139,7 @@ describe('SurveyResult Component', () => {
     expect(saveSurveyResultSpy.params).toEqual({
       answer: loadSurveyResultSpy.surveyResult.answers[1].answer
     })
+    await waitFor(() => screen.getByTestId('survey-result'))
   })
 
   test('Should render error on UnexpectedError', async () => {
