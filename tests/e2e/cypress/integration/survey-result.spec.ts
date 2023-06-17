@@ -3,6 +3,11 @@ import * as Helper from '../support/helpers'
 
 const path = /\/surveys\/any_id\//
 const mockUnexpectedError = (): void => { Http.mockServerError(path, 'GET') }
+const mockSuccess = (): void => {
+  cy.fixture('survey-result').then(surveyList => {
+    Http.mockOk(path, 'GET', surveyList)
+  })
+}
 
 describe('SurveyResult', () => {
   beforeEach(() => {
@@ -15,5 +20,14 @@ describe('SurveyResult', () => {
     mockUnexpectedError()
     cy.visit('/surveys/any_id')
     cy.getByTestId('error').should('contain.text', 'Algo de errado aconteceu. Tente novamente em breve.')
+  })
+
+  it('Should reload on button click', () => {
+    mockUnexpectedError()
+    cy.visit('/surveys/any_id')
+    cy.getByTestId('error').should('contain.text', 'Algo de errado aconteceu. Tente novamente em breve.')
+    mockSuccess()
+    cy.getByTestId('reload').click()
+    cy.getByTestId('question').should('exist')
   })
 })
